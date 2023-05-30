@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
         
         //private static readonly List<Employee> AllEmployee = new List<Employee>(); 
 
-        //Get All
+        //Get All Record
         [HttpGet]
         public async Task<ActionResult<List<Employee>>> GetEmployee()
         {
@@ -34,12 +34,12 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Employee>>> GetSingleEmployee(int id)
         {
-            var singleEmployee = _sampleDbContext.Employees.FirstOrDefaultAsync(emp => emp.Employeeid == id);
+            var singleEmployee = await _sampleDbContext.Employees.FindAsync(id);
             if (singleEmployee == null)
             {
                 return BadRequest("employee not found!");
             }
-            return Ok(await singleEmployee);
+            return Ok(singleEmployee);
         }
 
         //Create
