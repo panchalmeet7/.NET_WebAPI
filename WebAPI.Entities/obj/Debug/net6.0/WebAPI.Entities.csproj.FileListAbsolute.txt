@@ -1,0 +1,15 @@
+D:\.net\WebAPI\WebAPI.Entities\bin\Debug\net6.0\WebAPI.Entities.deps.json
+D:\.net\WebAPI\WebAPI.Entities\bin\Debug\net6.0\WebAPI.Entities.dll
+D:\.net\WebAPI\WebAPI.Entities\bin\Debug\net6.0\ref\WebAPI.Entities.dll
+D:\.net\WebAPI\WebAPI.Entities\bin\Debug\net6.0\WebAPI.Entities.pdb
+D:\.net\WebAPI\WebAPI.Entities\bin\Debug\net6.0\WebAPI.Repository.dll
+D:\.net\WebAPI\WebAPI.Entities\bin\Debug\net6.0\WebAPI.Repository.pdb
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.csproj.AssemblyReference.cache
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.AssemblyInfoInputs.cache
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.AssemblyInfo.cs
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.csproj.CoreCompileInputs.cache
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.csproj.CopyComplete
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.dll
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\ref\WebAPI.Entities.dll
+D:\.net\WebAPI\WebAPI.Entities\obj\Debug\net6.0\WebAPI.Entities.pdb

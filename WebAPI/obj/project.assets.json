@@ -1018,6 +1018,35 @@
             "rid": "win"
           }
         }
+      },
+      "WebAPI.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
+          "WebAPI.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WebAPI.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebAPI.Entities.dll": {}
+        }
+      },
+      "WebAPI.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
+        },
+        "compile": {
+          "bin/placeholder/WebAPI.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebAPI.Repository.dll": {}
+        }
       }
     }
   },
@@ -3479,6 +3508,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "WebAPI.Entities/1.0.0": {
+      "type": "project",
+      "path": "../WebAPI.Entities/WebAPI.Entities.csproj",
+      "msbuildProject": "../WebAPI.Entities/WebAPI.Entities.csproj"
+    },
+    "WebAPI.Repository/1.0.0": {
+      "type": "project",
+      "path": "../WebAPI.Repository/WebAPI.Repository.csproj",
+      "msbuildProject": "../WebAPI.Repository/WebAPI.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3487,7 +3526,9 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
-      "Swashbuckle.AspNetCore >= 6.2.3"
+      "Swashbuckle.AspNetCore >= 6.2.3",
+      "WebAPI.Entities >= 1.0.0",
+      "WebAPI.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3523,7 +3564,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\.net\\WebAPI\\WebAPI.Entities\\WebAPI.Entities.csproj": {
+              "projectPath": "D:\\.net\\WebAPI\\WebAPI.Entities\\WebAPI.Entities.csproj"
+            },
+            "D:\\.net\\WebAPI\\WebAPI.Repository\\WebAPI.Repository.csproj": {
+              "projectPath": "D:\\.net\\WebAPI\\WebAPI.Repository\\WebAPI.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

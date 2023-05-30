@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using WebAPI.Entities.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<SampleDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("constring")));
+//builder.Services.AddScoped<IEmailRepository, EmailRepository>();
+//builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

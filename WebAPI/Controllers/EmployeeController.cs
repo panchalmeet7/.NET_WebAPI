@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WebAPI.Entities.Data;
+using WebAPI.Entities.Models;
 
 namespace WebAPI.Controllers
 {
@@ -7,78 +10,82 @@ namespace WebAPI.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private static List<Employee> AllEmployee = new List<Employee>
-            {
-                new Employee {
-                    Id = 1,
-                    FirstName ="Meet",
-                    LastName = "Panchal",
-                    City="Nadiad",
-                    Department = ".NET"
-                },
-                new Employee {
-                    Id = 2,
-                    FirstName ="Dev",
-                    LastName = "shah",
-                    City="Ahmedabad",
-                    Department = "JAVA"
-                },
-            };
+        private readonly SampleDbContext _sampleDbContext;
+
+        public EmployeeController(SampleDbContext sampleDbContext)
+        {
+            _sampleDbContext = sampleDbContext;
+        }
+        //private static List<Employee> AllEmployee = new List<Employee>
+        //    {
+        //    var AllEmployee = _sampleDbContext.Employees.ToList(),
+        //    };
+        
+        //private static readonly List<Employee> AllEmployee = new List<Employee>(); 
 
         //Get All
         [HttpGet]
         public async Task<ActionResult<List<Employee>>> GetEmployee()
         {
-            return Ok(AllEmployee);
+            return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
+
         //Get Single Record
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Employee>>> GetSingleEmployee(int id)
         {
-            var singleEmployee = AllEmployee.Find(emp => emp.Id == id);
+            var singleEmployee = _sampleDbContext.Employees.FirstOrDefaultAsync(emp => emp.Employeeid == id);
             if (singleEmployee == null)
             {
-                return BadRequest(" not found!");
+                return BadRequest("employee not found!");
             }
-            return Ok(singleEmployee);
+            return Ok(await singleEmployee);
         }
+
         //Create
         [HttpPost]
         public async Task<ActionResult<List<Employee>>> AddEmployee(Employee employee)
         {
-            AllEmployee.Add(employee);
-            return Ok(AllEmployee);
+            _sampleDbContext.Employees.Add(employee);
+            _sampleDbContext.SaveChanges();
+            return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
+
         //Update
         [HttpPut]
         public async Task<ActionResult<List<Employee>>> UpdateEmployee(Employee employees)
         {
-            var updatedData = AllEmployee.Find(h => h.Id == employees.Id);
+            var updatedData = _sampleDbContext.Employees.Where(h => h.Employeeid == employees.Employeeid).FirstOrDefault();
             if (updatedData == null)
             {
-                return BadRequest("not found");
+                return BadRequest("employee not found");
             }
             else
             {
-                updatedData.Id = employees.Id;
-                updatedData.FirstName = employees.FirstName;
-                updatedData.LastName = employees.LastName;
+                updatedData.Employeeid = employees.Employeeid;
+                updatedData.Email = employees.Email;
+                updatedData.Addresss = employees.Addresss;
                 updatedData.City = employees.City;
-                updatedData.Department = employees.Department;
+                updatedData.Firstname = employees.Firstname;
+                updatedData.Lastname = employees.Lastname;
             }
-            return Ok(AllEmployee);
+            _sampleDbContext.Employees.Update(updatedData);
+            _sampleDbContext.SaveChanges();
+            return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
+
         //Delete 
         [HttpDelete("{id}")]
         public async Task<ActionResult<List<Employee>>> DeleteEmployee(int id)
         {
-            var deleteHero = AllEmployee.Find(hero => hero.Id == id);
+            var deleteHero = _sampleDbContext.Employees.Where(hero => hero.Employeeid == id).FirstOrDefault();
             if (deleteHero == null)
             {
-                return BadRequest("hero not found!");
+                return BadRequest("employee not found!");
             }
-            AllEmployee.Remove(deleteHero);
-            return Ok(AllEmployee);
+             _sampleDbContext.Employees.Remove(deleteHero);
+            _sampleDbContext.SaveChanges();
+            return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
     }
 }
