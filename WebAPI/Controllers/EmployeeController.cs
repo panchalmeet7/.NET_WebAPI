@@ -16,18 +16,34 @@ namespace WebAPI.Controllers
         {
             _sampleDbContext = sampleDbContext;
         }
+
         //private static List<Employee> AllEmployee = new List<Employee>
-        //    {
-        //    var AllEmployee = _sampleDbContext.Employees.ToList(),
-        //    };
-        
-        //private static readonly List<Employee> AllEmployee = new List<Employee>(); 
+        //{
+        //        new Employee {
+        //            Employeeid = 1,
+        //            Firstname = "fname",
+        //            Lastname ="lname",
+        //            Email ="email@gmail.com",
+        //            Addresss = "add1" ,
+        //            City ="city1",
+        //        },
+        //        new Employee {
+        //            Employeeid = 2,
+        //            Firstname = "fname2",
+        //            Lastname ="lname",
+        //            Email ="second@gmail.com",
+        //            Addresss = "add2" ,
+        //            City ="city2",
+        //        },
+        //};
 
         //Get All Record
+
         [HttpGet]
         public async Task<ActionResult<List<Employee>>> GetEmployee()
         {
             return Ok(await _sampleDbContext.Employees.ToListAsync());
+            //return Ok(AllEmployee);
         }
 
         //Get Single Record
@@ -36,9 +52,8 @@ namespace WebAPI.Controllers
         {
             var singleEmployee = await _sampleDbContext.Employees.FindAsync(id);
             if (singleEmployee == null)
-            {
                 return BadRequest("employee not found!");
-            }
+
             return Ok(singleEmployee);
         }
 
@@ -46,8 +61,8 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Employee>>> AddEmployee(Employee employee)
         {
-            _sampleDbContext.Employees.Add(employee);
-            _sampleDbContext.SaveChanges();
+            await _sampleDbContext.Employees.AddAsync(employee);
+            await _sampleDbContext.SaveChangesAsync();
             return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
 
@@ -55,22 +70,18 @@ namespace WebAPI.Controllers
         [HttpPut]
         public async Task<ActionResult<List<Employee>>> UpdateEmployee(Employee employees)
         {
-            var updatedData = _sampleDbContext.Employees.Where(h => h.Employeeid == employees.Employeeid).FirstOrDefault();
+            var updatedData = await _sampleDbContext.Employees.FindAsync(employees.Employeeid);
             if (updatedData == null)
-            {
                 return BadRequest("employee not found");
-            }
-            else
-            {
-                updatedData.Employeeid = employees.Employeeid;
-                updatedData.Email = employees.Email;
-                updatedData.Addresss = employees.Addresss;
-                updatedData.City = employees.City;
-                updatedData.Firstname = employees.Firstname;
-                updatedData.Lastname = employees.Lastname;
-            }
-            _sampleDbContext.Employees.Update(updatedData);
-            _sampleDbContext.SaveChanges();
+
+            updatedData.Employeeid = employees.Employeeid;
+            updatedData.Email = employees.Email;
+            updatedData.Addresss = employees.Addresss;
+            updatedData.City = employees.City;
+            updatedData.Firstname = employees.Firstname;
+            updatedData.Lastname = employees.Lastname;
+
+            await _sampleDbContext.SaveChangesAsync();
             return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
 
@@ -80,10 +91,9 @@ namespace WebAPI.Controllers
         {
             var deleteHero = _sampleDbContext.Employees.Where(hero => hero.Employeeid == id).FirstOrDefault();
             if (deleteHero == null)
-            {
                 return BadRequest("employee not found!");
-            }
-             _sampleDbContext.Employees.Remove(deleteHero);
+
+            _sampleDbContext.Employees.Remove(deleteHero);
             _sampleDbContext.SaveChanges();
             return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
