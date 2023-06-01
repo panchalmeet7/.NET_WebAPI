@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "XhhzBH4k/m8TJc1d414kHT1McZAfS2sBUJlwMG7P/XYPE+GyoS8oOXOOsM48fIB6iiVVCrX6OyNKqJXuKROlEg==",
+  "dgSpecHash": "XWWNDo5EeW9BTPufL4gOXRgMFZuP6b/0p6l+NPaLcvGTUVFerDKBp7L1zObevbRhOKplNoQma2D+5xBbpq4nkQ==",
   "success": true,
   "projectFilePath": "D:\\.net\\WebAPI\\WebAPI.Repository\\WebAPI.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pct38\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\pct38\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\pct38\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\pct38\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\pct38\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Dapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using WebAPI.Entities.Data;
 using WebAPI.Entities.Models;
 
@@ -11,7 +14,7 @@ namespace WebAPI.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly SampleDbContext _sampleDbContext;
-
+        private string connectionString = "Data Source=PCT38\\SQL2019;Initial Catalog=sampleDB;User Id=sa;Password=Tatva@123;TrustServerCertificate=True;Integrated Security=True";
         public EmployeeController(SampleDbContext sampleDbContext)
         {
             _sampleDbContext = sampleDbContext;
@@ -42,6 +45,9 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Employee>>> GetEmployee()
         {
+            //var GetAllEmployeeData = _dummyAppContext.Employees.FromSqlRaw("sp_GetAllEmolyeeData").ToList();
+
+            //return View(GetAllEmployeeData);
             return Ok(await _sampleDbContext.Employees.ToListAsync());
             //return Ok(AllEmployee);
         }
@@ -72,16 +78,34 @@ namespace WebAPI.Controllers
         {
             var updatedData = await _sampleDbContext.Employees.FindAsync(employees.Employeeid);
             if (updatedData == null)
+            {
                 return BadRequest("employee not found");
-
-            updatedData.Employeeid = employees.Employeeid;
-            updatedData.Email = employees.Email;
-            updatedData.Addresss = employees.Addresss;
-            updatedData.City = employees.City;
-            updatedData.Firstname = employees.Firstname;
-            updatedData.Lastname = employees.Lastname;
-
-            await _sampleDbContext.SaveChangesAsync();
+            }
+            else
+            {
+                try
+                {
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@@employeeid", employees.Employeeid);
+                    parameters.Add("@firstname", employees.Firstname);
+                    parameters.Add("@lastname", employees.Lastname);
+                    parameters.Add("@email", employees.Email);
+                    parameters.Add("@address", employees.Addresss);
+                    parameters.Add("@city", employees.City);
+                    var storedprocedure = "sp_UpdateEmployeeRecord";
+                    using (var connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        var exexute = connection.Execute(storedprocedure, parameters, commandType: CommandType.StoredProcedure);
+                        connection.Close();
+                    }
+                }
+                catch
+                {
+                    return BadRequest("some error occured");
+                }
+            }
+            
             return Ok(await _sampleDbContext.Employees.ToListAsync());
         }
 

@@ -1,10 +1,3 @@
-D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
-D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
-D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
-D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
-D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
-D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
@@ -15,7 +8,9 @@ D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\ref\WebAPI.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Azure.Core.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Azure.Identity.dll
+D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\BCrypt.Net-Next.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -76,6 +71,13 @@ D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.Entities.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.Repository.dll
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.Entities.pdb
 D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.Repository.pdb
+D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
 D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
 D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
@@ -84,3 +86,7 @@ D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
 D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
 D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 D:\.net\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Scrutor.dll
+D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\.net\WebAPI\WebAPI\bin\Debug\net6.0\Dapper.dll

@@ -2,6 +2,7 @@ D:\.net\WebAPI\WebAPI.Repository\bin\Debug\net6.0\WebAPI.Repository.deps.json
 D:\.net\WebAPI\WebAPI.Repository\bin\Debug\net6.0\WebAPI.Repository.dll
 D:\.net\WebAPI\WebAPI.Repository\bin\Debug\net6.0\ref\WebAPI.Repository.dll
 D:\.net\WebAPI\WebAPI.Repository\bin\Debug\net6.0\WebAPI.Repository.pdb
+D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.csproj.AssemblyReference.cache
 D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.GeneratedMSBuildEditorConfig.editorconfig
 D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.AssemblyInfoInputs.cache
 D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.AssemblyInfo.cs
@@ -9,4 +10,3 @@ D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.csproj.CoreC
 D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.dll
 D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\ref\WebAPI.Repository.dll
 D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.pdb
-D:\.net\WebAPI\WebAPI.Repository\obj\Debug\net6.0\WebAPI.Repository.csproj.AssemblyReference.cache
